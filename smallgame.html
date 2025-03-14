@@ -1,0 +1,34 @@
+<html>
+ <head></head>
+ <body>
+<script type="text/javascript" id="dcoder_script">let playgame = confirm("Shall you ready to play the game?");
+if (playgame) {
+  let playerchoice = prompt("You are rock, scissor, or paper");
+  if (playerchoice) {
+    let playerone = playerchoice.trim().toLowerCase();
+    if (playerone === "rock" || playerone === "scissor" || playerone === "paper") {
+      let computerchoice = Math.floor(Math.random() * 3 + 1);
+      let computer = 
+        computerchoice === 1 ? "rock" : 
+        computerchoice === 2 ? "scissor" : "paper";
+
+      let result = 
+        playerone === computer ? "Match tie!" :
+        playerone === "rock" && computer === "paper" ? `playerone: ${playerone}\ncomputer: ${computer}\ncomputer wins!` :
+        playerone === "paper" && computer === "scissor" ? `playerone: ${playerone}\ncomputer: ${computer}\ncomputer wins!` :
+        playerone === "scissor" && computer === "rock" ? `playerone: ${playerone}\ncomputer: ${computer}\ncomputer wins!` :
+        `playerone: ${playerone}\ncomputer: ${computer}\nplayerone wins!`;
+
+      alert(result);
+      let playagain = confirm("Are you ready to play again?");
+      playagain ? location.reload() : alert("OK, thanks for playing!");
+
+    } else {
+      alert("You didn't enter a valid option for the game!");
+    }
+  } else {
+    alert("You didn't enter rock, scissor, or paper.");
+  }
+} else {
+  alert("OK, maybe next time.");
+}</script></body></html>
